@@ -1,3 +1,5 @@
+#coding: utf-8
+
 i = 1
 cars = []
 car_status = []
