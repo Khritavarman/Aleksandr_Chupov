@@ -1,0 +1,63 @@
+#:kivy 1.1.0
+#:import label kivy.uix.label
+#:import sla kivy.adapters.simplelistadapter
+
+Root:
+    BoxLayout:
+        size_hint_y: None
+        height: 200
+        
+        Button:
+            text: 'Choose files'
+            on_release: root.show_load()
+
+        Button:
+            text: 'Play/stop'
+            on_release: root.play_song()
+
+        Button:
+            text: "Rewind"
+            on_release: root.rewinds()
+
+        Button:
+            text: "Pause"
+            on_release: root.play_pause()
+
+        
+        Button:
+            text: "Show playlist"
+            on_release: root.show_playlist()
+
+<LoadDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+            Button:
+                text: "Add file to playlist"
+                on_release: root.load(filechooser.path, filechooser.selection)
+
+            
+
+
+
+
+            
+
+            
+
+
+
+
+
+
